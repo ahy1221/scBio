@@ -161,6 +161,7 @@ choseCellsForRuns = function(XY, refNames, modelSize, minSelection, neighborhood
   minValueToReduceTo = 10^-10
 
   initialGrids = lapply(unique(refNames), function(currCluster){
+    cat("[INFO]: Processing ", currCluster, "...\n")
     clusterIndexes = which(refNames==currCluster)
     nbins = max(k,length(clusterIndexes)/neighborhoodSize)
     if(is.null(dim(XY))){
