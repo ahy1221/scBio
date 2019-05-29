@@ -174,7 +174,7 @@ choseCellsForRuns = function(XY, refNames, modelSize, minSelection, neighborhood
       tab <- table(cellLocationOnGrid)
       grid[as.numeric(names(tab))] <- tab
     }else{
-      currXY = XY[clusterIndexes,]
+      currXY = XY[clusterIndexes,,drop = F]
       ch <- grDevices::chull(currXY)
       coords <- currXY[c(ch, ch[1]), ]
       # ch = geometry::convhulln(currXY[,1:3])
